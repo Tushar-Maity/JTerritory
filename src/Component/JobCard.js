@@ -4,21 +4,23 @@ import { Link } from "react-router-dom";
 const JobCard = () => {
   return (
     <div className="bg-[whitesmoke] h-screen w-full flex items-center justify-center">
-        <div className='bg-white h-[450px] w-[750px] rounded-xl p-5'>
-            <Profile />
-            <JobDetails />
-            <div className='mt-12 pl-8 pr-24 font-medium text-sm'>
-                <p>A Job Description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a person. It may specify the functionality to who the position reports.</p>
+        <div className='bg-white h-[450px] w-[750px] rounded-xl'>
+            <div className='p-5'>
+                <Profile />
+                <JobDetails />
+                <div className='mt-12 pl-8 pr-24 font-medium text-sm'>
+                    <p>A Job Description or JD is a written narrative that describes the general tasks, or other related duties, and responsibilities of a person. It may specify the functionality to who the position reports.</p>
+                </div>
             </div>
-            <div className='bg-slate-600 h-40'>
+            <div className='flex-wrap flex justify-center gap-4 py-5 px-2'>
                 <Link to="/profile">
-                    <Button title="180 Matching"/>
+                    <Button title="180 Matching" bgColor="bg-fuchsia-100" color="text-blue-500"/>
                 </Link>
-                <Button title="150 Under Review"/>
-                <Button title="20 Client Submitted"/>
-                <Button title="0 Joined"/>
-                <Button title="20 Rejected"/>
-                <Button title="3 Dropped"/>
+                <Button title="150 Under Review" bgColor="bg-rose-200" color="text-blue-500"/>
+                <Button title="20 Client Submitted" bgColor="bg-yellow-100" color="text-amber-500"/>
+                <Button title="0 Joined" bgColor="bg-cyan-100" color="text-cyan-700"/>
+                <Button title="20 Rejected" bgColor="bg-rose-100" color="text-red-600"/>
+                <Button title="3 Dropped" bgColor="bg-rose-100" color="text-red-600"/>
             </div>
         </div>
     </div>
@@ -53,9 +55,9 @@ const JobDetails = () => {
     )
 }
 
-const Button = ({ title }) => {
+const Button = ({ title, color, bgColor }) => {
     return (
-        <div className='mx-8 mt-12 h-9 bg-violet-200 text-blue-500 w-56 rounded-3xl flex items-center justify-center cursor-pointer text-sm'>
+        <div className={`${color} ${bgColor} h-9 w-56 rounded-3xl flex items-center justify-center cursor-pointer text-sm`}>
             {title}
         </div>
     )
